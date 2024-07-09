@@ -1,0 +1,7 @@
+contactform_entity.form:
+  path: '/contact-form-entity'
+  defaults:
+    _form: '\Drupal\contactform_entity\Form\ContactEntityForm'
+    _title: 'Contact Form (Entity)'
+  requirements:
+    _permission: 'access content'
