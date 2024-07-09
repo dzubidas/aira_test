@@ -1,0 +1,5 @@
+name: Contact Form Service
+type: module
+description: 'Provides a simple contact form using service'
+core_version_requirement: ^10
+package: Custom
