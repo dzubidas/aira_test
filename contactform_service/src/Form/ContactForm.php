@@ -9,12 +9,28 @@ use Drupal\contactform_service\Service\SubmissionHandler;
 
 class ContactForm extends FormBase {
 
+  /**
+   * The submission handler service.
+   *
+   * @var \Drupal\contactform_service\Service\SubmissionHandler
+   */
   protected $submissionHandler;
 
+  /**
+   * Constructs a new ContactForm object.
+   *
+   * @param \Drupal\contactform_service\Service\SubmissionHandler $submission_handler
+   *   The submission handler service.
+   */
   public function __construct(SubmissionHandler $submission_handler) {
     $this->submissionHandler = $submission_handler;
   }
 
+  /**
+   * {@inheritdoc}
+   *
+   * Creates a new instance of this form.
+   */
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('contactform.submission_handler')
@@ -23,6 +39,8 @@ class ContactForm extends FormBase {
 
   /**
    * {@inheritdoc}
+   *
+   * Returns a unique string identifying the form.
    */
   public function getFormId() {
     return 'contactform_form_service';
@@ -30,6 +48,16 @@ class ContactForm extends FormBase {
 
   /**
    * {@inheritdoc}
+   *
+   * Builds the contact form.
+   *
+   * @param array $form
+   *   An associative array containing the structure of the form.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   *
+   * @return array
+   *   The form structure.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['name'] = [
@@ -57,6 +85,17 @@ class ContactForm extends FormBase {
 
     return $form;
   }
+
+  /**
+   * {@inheritdoc}
+   *
+   * Form submission handler.
+   *
+   * @param array $form
+   *   An associative array containing the structure of the form.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $data = [
       $form_state->getValue('name'),
