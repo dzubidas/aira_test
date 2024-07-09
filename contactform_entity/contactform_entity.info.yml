@@ -1,6 +1,6 @@
 name: Contact Form Entity
 type: module
-description: 'This module provides a contact form with custom entity for storing submissions information.'
+description: 'Implements a robust contact form system utilizing Drupal 10 custom entities. Features include form submission storage, enhanced data management, and seamless integration with Drupal's entity API for improved scalability and performance.'
 core_version_requirement: ^10
 package: Custom
 dependencies:
