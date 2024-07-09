@@ -23,7 +23,23 @@ use Drupal\Core\Field\BaseFieldDefinition;
  */
 class ContactSubmission extends ContentEntityBase {
 
+  /**
+   * Defines the base field definitions for the contact submission entity.
+   *
+   * This method is used to define the fields that will be stored in the
+   * entity's base table. It sets up the structure for storing contact form
+   * submissions, including the submitter's name, email, message content,
+   * and the timestamp of submission.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+   *   The entity type definition.
+   *
+   * @return array
+   *   An array of base field definitions for this entity type.
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+
+    // Get the base fields from the parent class.
     $fields = parent::baseFieldDefinitions($entity_type);
 
     $fields['name'] = BaseFieldDefinition::create('string')
