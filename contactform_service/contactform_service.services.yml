@@ -1,0 +1,4 @@
+services:
+  contactform.submission_handler:
+    class: Drupal\contactform_service\Service\SubmissionHandler
+    arguments: ['@file_system']
