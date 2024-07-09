@@ -1,0 +1,7 @@
+contactform.form:
+  path: '/contact-form'
+  defaults:
+    _form: '\Drupal\contactform\Form\ContactForm'
+    _title: 'Contact Form'
+  requirements:
+    _permission: 'access content'

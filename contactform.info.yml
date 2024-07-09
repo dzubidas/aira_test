@@ -1,0 +1,5 @@
+name: Contact Form
+type: module
+description: 'Provides a simple contact form with validation and CSV export.'
+core_version_requirement: ^10
+package: Custom
